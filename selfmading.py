@@ -51,6 +51,25 @@ while True:
 print("\nDraw_graphic")
 print("------------------")
 
+order=input("請輸入想要的圖形順序：")
+for i in range(0,len(order),2):
+    if  order[i]=='t':
+        tl=int(t[int(order[i+1])-1])
+        for ii in range(1,int(tl/2)+1):
+            print(" ")
+            for iii in range(0,int(tl/2)-ii):
+                print(" ",end='')
+            for iii in range(0,ii*2):
+                print("*",end='')
+#    elif order[i]=='r':
+#
+#    elif order[i]=='s':
+#
+#    elif order[i]=='c':
+#
+#    elif order[i]=='h':
+#
+
 '''
 接下來交給string—sperater跟graphic了
 '''
