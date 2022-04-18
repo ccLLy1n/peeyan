@@ -2,8 +2,11 @@
 t=[]
 s=[]
 c=[]
-r=[]#長，寬
-h=[]#下邊，上邊，高
+rl=[]#矩形長
+rw=[]#矩形寬
+hd=[]#梯形下邊
+hu=[]#梯形上邊
+hh=[]#梯形高
 
 #計算目前個類別的形狀數 ShapeCount
 tc=0
@@ -24,10 +27,10 @@ while True:
         print("這個三角形編號是t"+str(tc+1))
         tc+=1
     elif shape=='r':
-        r.append(input("請輸入矩形長邊邊長："))
-        r.append(input("請輸入矩形寬邊邊長："))
-        print("這個矩形編號是r"+str(int(rc/2)+1))
-        rc+=2
+        rl.append(input("請輸入矩形長邊邊長："))
+        rw.append(input("請輸入矩形寬邊邊長："))
+        print("這個矩形編號是r"+str(rc+1))
+        rc+=1
     elif shape=='s':
         s.append(input("請輸入星形邊長："))
         print("這個星形編號是s"+str(sc+1))
@@ -37,11 +40,11 @@ while True:
         print("這個圓形編號是c"+str(cc+1))
         cc+=1
     elif shape=='h':
-        h.append(input("請輸入梯形下邊長："))
-        h.append(input("請輸入梯形上邊長："))
-        h.append(input("請輸入梯形高："))
-        print("這個梯形編號是h"+str(int(hc/3)+1))
-        hc+=3
+        hd.append(input("請輸入梯形下邊長："))
+        hu.append(input("請輸入梯形上邊長："))
+        hh.append(input("請輸入梯形高："))
+        print("這個梯形編號是h"+str(hc+1))
+        hc+=1
     elif shape=='exit':
         print("進入下一階段")
         break
