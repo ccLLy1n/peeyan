@@ -1,4 +1,4 @@
-#宣告各形狀代號跟陣列
+#宣告各形狀代號跟int陣列
 t=[]
 s=[]
 c=[]
@@ -32,7 +32,7 @@ while True:
         if int(ans)<=0:
             print("輸入錯誤")
             continue
-        t.append(ans)
+        t.append(int(ans))
         print("這個三角形編號是t"+str(tc+1))
         tc+=1
     elif shape=='r':
@@ -45,7 +45,7 @@ while True:
         if int(ans)<=0:
             print("輸入錯誤")
             continue
-        rl.append(ans)
+        rl.append(int(ans))
 
         ans=input("請輸入矩形寬邊邊長：")
         try:
@@ -56,7 +56,7 @@ while True:
         if int(ans)<=0:
             print("輸入錯誤")
             continue
-        rw.append(ans)
+        rw.append(int(ans))
 
         print("這個矩形編號是r"+str(rc+1))
         rc+=1
@@ -70,7 +70,7 @@ while True:
         if int(ans)<=0:
             print("輸入錯誤")
             continue
-        s.append(ans)
+        s.append(int(ans))
 
         print("這個星形編號是s"+str(sc+1))
         sc+=1
@@ -84,7 +84,7 @@ while True:
         if int(ans)<=0:
             print("輸入錯誤")
             continue
-        c.append(ans)
+        c.append(int(ans))
 
         print("這個圓形編號是c"+str(cc+1))
         cc+=1
@@ -98,7 +98,7 @@ while True:
         if int(ans)<=0:
             print("輸入錯誤")
             continue
-        hd.append(ans)
+        hd.append(int(ans))
 
         ans=input("請輸入梯形上邊長：")
         try:
@@ -109,7 +109,7 @@ while True:
         if int(ans)<=0:
             print("輸入錯誤")
             continue
-        hu.append(ans)
+        hu.append(int(ans))
 
         ans=input("請輸入梯形高：")
         try:
@@ -120,7 +120,7 @@ while True:
         if int(ans)<=0:
             print("輸入錯誤")
             continue
-        hh.append(ans)
+        hh.append(int(ans))
 
         print("這個梯形編號是h"+str(hc+1))
         hc+=1

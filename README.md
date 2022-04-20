@@ -28,7 +28,7 @@ hc=0
 接下來詢問相應的參數
 並暫存入ans
 對ans進行偵錯  判斷是否有輸入非法輸入 有則提示並continu 無則繼續
-將ans存入相應形狀陣列中
+將ans轉int存入相應形狀陣列中
 並將shapecount+1
 回到while開頭
 
