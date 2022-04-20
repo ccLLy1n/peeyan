@@ -6,20 +6,18 @@ class graph:
         self.side_2=side_2
     def draw_tri(self):                       #畫三角形
         for i in range(self.side_1+1):
-            x=" "*(self.side_1-i)+ '*'*(2*i-1)
+            x=" "*(self.side_1-i+space_num)+ '*'*(2*i+1)
             print(x)
-        print("\n")
     def draw_rec(self):                       #畫長方形
         for i in range(self.side_1):
-            print("*"*self.side_2)
-            #print("\n")
-        print("\n")
+            print(" "*space_num+"*"*self.side_2)
+        
     def draw_square(self):                    #畫正方形
         for i in range(self.side_1):
-            print("*"*self.side_1)
+            print(" "*space_num+"*"*self.side_1)
     def draw_trap(self):                      #畫梯形   side_1是上底   side_2是高
         for i in range(self.side_1):
-            x=(" "*(self.side_1-i-1)+"*"*(self.side_2+2*i))
+            x=(" "*(self.side_1-i-1+space_num)+"*"*(self.side_2+2*i))
             print(x)
     def circle(self):                          #畫圓形
         side=self.side_1
@@ -27,7 +25,7 @@ class graph:
         t=time-2
         for i in range(side):
             answer=str()
-            space_1 = " "*(time-i)
+            space_1 = " "*(time-i+space_num)
             #space_2 = "="*(time-i)
             #print(space)
             if i==0:
@@ -38,7 +36,7 @@ class graph:
                 pixel_1="*****"
                 pixel_2=""
                 space_2=""
-                space_1 = " "*(time)
+                space_1 = " "*(time+space_num)
             elif i>0 and i <=side-time-1:
                 pixel_1="*"
                 pixel_2="*"
@@ -59,12 +57,12 @@ class graph:
             print(answer)            
 
 shape_sequence=["t","t","s","r","r","h","c"] #用這個列表紀錄形狀順序(三角，三角，正方形，長方形，長方形，梯形，圓形)
-shape_wide=[19,13,8,7,4,14,6]#這個列表紀錄形狀對應到的寬度，三角形寬度為高度*2-1，梯形寬度為上邊+2*(高度-1)
+shape_wide=[21,13,8,10,11,14,6]#這個列表紀錄形狀對應到的寬度，三角形寬度為高度*2+1，梯形寬度為上邊+2*(高度-1)
 space_num=max(shape_wide)
 t=[10,6]#高
 s=[8]#邊長
 c=[6]#半徑
-r=[7,10,4,11]#寬，長
+r=[7,10,4,11]#長，寬
 h=[5,6]#高，上邊   #這邊是從界面獲得的個形狀數據
 count=0
 a= len(shape_sequence)
@@ -72,9 +70,10 @@ a= len(shape_sequence)
 while True:
     if count==a :
         break
-    elif shape_sequence[0]=="t":
+
+    space_num=int((max(shape_wide)-shape_wide[count])//2)+1 #每個圖形為了對齊需要往右移的量
+    if shape_sequence[0]=="t":
         x=graph(t[0],t[0])#高
-        space_num=max(shape_wide)
         x.draw_tri()
         t.pop(0)
     elif shape_sequence[0]=="s":
@@ -95,6 +94,5 @@ while True:
         x.draw_trap()
         h.pop(0)   
         h.pop(0) 
-    count=count+1
-    print(count)
+    count=count+1 #判斷印完了沒用的計數器
     shape_sequence.pop(0)
