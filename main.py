@@ -23,26 +23,105 @@ print("t是三角形，r是矩形，s是星形，c是圓形，h是梯形，最�
 while True:
     shape=input("請輸入想要的形狀：")
     if shape=='t':
-        t.append(input("請輸入三角形邊長："))
+        ans=input("請輸入三角形邊長：")
+        try:
+            int(ans)
+        except:
+            print("輸入錯誤")
+            continue
+        if int(ans)<=0:
+            print("輸入錯誤")
+            continue
+        t.append(ans)
         print("這個三角形編號是t"+str(tc+1))
         tc+=1
     elif shape=='r':
-        rl.append(input("請輸入矩形長邊邊長："))
-        rw.append(input("請輸入矩形寬邊邊長："))
+        ans=input("請輸入矩形長邊邊長：")
+        try:
+            int(ans)
+        except:
+            print("輸入錯誤")
+            continue
+        if int(ans)<=0:
+            print("輸入錯誤")
+            continue
+        rl.append(ans)
+
+        ans=input("請輸入矩形寬邊邊長：")
+        try:
+            int(ans)
+        except:
+            print("輸入錯誤")
+            continue
+        if int(ans)<=0:
+            print("輸入錯誤")
+            continue
+        rw.append(ans)
+
         print("這個矩形編號是r"+str(rc+1))
         rc+=1
     elif shape=='s':
-        s.append(input("請輸入星形邊長："))
+        ans=input("請輸入星形邊長：")
+        try:
+            int(ans)
+        except:
+            print("輸入錯誤")
+            continue
+        if int(ans)<=0:
+            print("輸入錯誤")
+            continue
+        s.append(ans)
+
         print("這個星形編號是s"+str(sc+1))
         sc+=1
     elif shape=='c':
-        c.append(input("請輸入圓形直徑："))
+        ans=input("請輸入圓形直徑：")
+        try:
+            int(ans)
+        except:
+            print("輸入錯誤")
+            continue
+        if int(ans)<=0:
+            print("輸入錯誤")
+            continue
+        c.append(ans)
+
         print("這個圓形編號是c"+str(cc+1))
         cc+=1
     elif shape=='h':
-        hd.append(input("請輸入梯形下邊長："))
-        hu.append(input("請輸入梯形上邊長："))
-        hh.append(input("請輸入梯形高："))
+        ans=input("請輸入梯形下邊長：")
+        try:
+            int(ans)
+        except:
+            print("輸入錯誤")
+            continue
+        if int(ans)<=0:
+            print("輸入錯誤")
+            continue
+        hd.append(ans)
+
+        ans=input("請輸入梯形上邊長：")
+        try:
+            int(ans)
+        except:
+            print("輸入錯誤")
+            continue
+        if int(ans)<=0:
+            print("輸入錯誤")
+            continue
+        hu.append(ans)
+
+        ans=input("請輸入梯形高：")
+        try:
+            int(ans)
+        except:
+            print("輸入錯誤")
+            continue
+        if int(ans)<=0:
+            print("輸入錯誤")
+            continue
+        hh.append(ans)
+
         print("這個梯形編號是h"+str(hc+1))
         hc+=1
     elif shape=='exit':
