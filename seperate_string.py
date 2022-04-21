@@ -96,5 +96,5 @@ while True:
         x.draw_trap()
         h.pop(0)   
         h.pop(0) 
-    count=count+1 #判斷印完了沒用的計數器
+    count=count+1 #判斷印完了沒有的計數器
     shape_sequence.pop(0)
