@@ -65,13 +65,8 @@ r=[7,10,4,11]#長，寬
 h=[5,6]#高，上邊   #這邊是從界面獲得的個形狀數據
 
 #上面部份只需要把一開始界面輸入的數值丟到相對應的位置即可
-count=0
-a= len(shape_sequence)
 
-while True:
-    if count==a :
-        break
-
+for count in range(0,len(shape_sequence)):
     space_num=int((max(shape_wide)-shape_wide[count])//2)+1 #每個圖形為了對齊需要往右移的量
     if shape_sequence[0]=="t":
         x=graph(t[0],t[0])#高
