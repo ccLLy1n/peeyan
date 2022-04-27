@@ -29,11 +29,11 @@ class graph:
             #space_2 = "="*(time-i)
             #print(space)
             if i==0:
-                pixel_1=" *****"
+                pixel_1="*****"
                 pixel_2=""
                 space_2=""
             elif i==side-1:
-                pixel_1=" *****"
+                pixel_1="*****"
                 pixel_2=""
                 space_2=""
                 space_1 = " "*(time)
@@ -53,7 +53,7 @@ class graph:
                 if t>=0:
                     space_2="     " +((t)*2)*" "
                 t=t-1
-            answer = space_num*" "+space_1 + pixel_1 + space_2 + pixel_2 + space_1
+            answer = (1+space_num)*" "+space_1 + pixel_1 + space_2 + pixel_2 + space_1
             print(answer)   
     def draw_star(self):
         side=self.side_1
@@ -101,11 +101,11 @@ class graph:
             elif i==height-1:
                 print(space_num*" "+space_1+draw_1+space_2+draw_1)
 shape_sequence=["t","t","s","r","r","h","c","st"] #用這個列表紀錄形狀順序(三角，三角，正方形，長方形，長方形，梯形，圓形)
-shape_wide=[21,13,8,10,11,14,6,13]#這個列表紀錄形狀對應到的寬度，三角形寬度為高度*2+1，梯形寬度為上邊+2*(高度-1)，星星寬度邊*3-1
+shape_wide=[21,13,8,10,11,14,10,13]#這個列表紀錄形狀對應到的寬度，三角形寬度為高度*2+1，梯形寬度為上邊+2*(高度-1)，星星寬度邊*3-1，圓形寬度為直徑
 space_num=max(shape_wide)
 t=[10,6]#高
 s=[8]#邊長
-c=[6]#半徑
+c=[10]#直徑
 r=[7,10,4,11]#長，寬
 h=[5,6]#高，上邊   #這邊是從界面獲得的個形狀數據
 st=[4]#邊長
