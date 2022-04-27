@@ -140,7 +140,7 @@ while True:
         h.pop(0)   
         h.pop(0)
     elif shape_sequence[0]=="st":
-        x=graph(st[0],st[0])#半徑
+        x=graph(st[0],st[0])#邊長
         x.draw_star()
         st.pop(0)  
     count=count+1 #判斷印完了沒有的計數器
