@@ -4,7 +4,7 @@ s=[]
 c=[]
 rl=[]#矩形長
 rw=[]#矩形寬
-hd=[]#梯形下邊
+#hd=[]#梯形下邊
 hu=[]#梯形上邊
 hh=[]#梯形高
 
@@ -89,17 +89,18 @@ while True:
         print("這個圓形編號是c"+str(cc+1))
         cc+=1
     elif shape=='h':
-        ans=input("請輸入梯形下邊長：")
-        try:
-            int(ans)
-        except:
-            print("輸入錯誤")
-            continue
-        if int(ans)<=0:
-            print("輸入錯誤")
-            continue
-        hd.append(int(ans))
-
+        
+        # ans=input("請輸入梯形下邊長：")
+        # try:
+        #     int(ans)
+        # except:
+        #     print("輸入錯誤")
+        #     continue
+        # if int(ans)<=0:
+        #     print("輸入錯誤")
+        #     continue
+        # hd.append(int(ans))
+        
         ans=input("請輸入梯形上邊長：")
         try:
             int(ans)
