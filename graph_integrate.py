@@ -1,3 +1,5 @@
+# 將原本的graph branch 的 graph_4.py 複製，並將self.space_num增加為class 的新變數
+# Sean 更新：再init class 時，可以選擇要不要附上space_num參數，預設為0
 class graph:
     def __init__(self, side_1, side_2,space_num=0):       #創造物件並且定義邊長  
         self.side_1=side_1
