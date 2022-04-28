@@ -1,23 +1,22 @@
 class graph:
-    def __init__(self, side_1, side_2):       #創造物件並且定義邊長  
+    def __init__(self, side_1, side_2,space_num=0):       #創造物件並且定義邊長  
         self.side_1=side_1
         self.side_2=side_2
+        self.space_num=space_num
     def draw_tri(self):                       #畫三角形
         for i in range(self.side_1+1):
-            x=" "*(self.side_1-i)+ '*'*(2*i-1)
+            x=" "*(self.side_1-i+self.space_num)+ '*'*(2*i+1)
             print(x)
-        print("\n")
     def draw_rec(self):                       #畫長方形
         for i in range(self.side_1):
-            print("*"*self.side_2)
-            #print("\n")
-        print("\n")
+            print(" "*self.space_num+"*"*self.side_2)
+        
     def draw_square(self):                    #畫正方形
         for i in range(self.side_1):
-            print("*"*self.side_1)
+            print(" "*self.space_num+"*"*self.side_1)
     def draw_trap(self):                      #畫梯形   side_1是上底   side_2是高
         for i in range(self.side_1):
-            x=(" "*(self.side_1-i-1)+"*"*(self.side_2+2*i))
+            x=(" "*(self.side_1-i-1+self.space_num)+"*"*(self.side_2+2*i))
             print(x)
     def draw_circle(self):
         side=self.side_1
@@ -53,8 +52,8 @@ class graph:
                 if t>=0:
                     space_2="     " +((t)*2)*" "
                 t=t-1
-            answer = space_1 + pixel_1 + space_2 + pixel_2 + space_1
-            print(answer)
+            answer = (1+self.space_num)*" "+space_1 + pixel_1 + space_2 + pixel_2 + space_1
+            print(answer)   
     def draw_star(self):
         side=self.side_1
         height=1+(side-1)*3
@@ -88,17 +87,15 @@ class graph:
             #----------------------------------------------
             if i<=side-1:
                 if i==0:
-                    print(space_1+draw_1+space_1)
+                    print(self.space_num*" "+space_1+draw_1+space_1)
                 else:
-                    print(space_1+draw_1+space_2+draw_1+space_1)
+                    print(self.space_num*" "+space_1+draw_1+space_2+draw_1+space_1)
             elif i>=side and i<2*side-2:
-                print(space_1+draw_1+space_2+draw_1)
+                print(self.space_num*" "+space_1+draw_1+space_2+draw_1)
             elif i>=2*side-2 and i<height-1:
                 if i==2*side-2:
-                    print(space_1+draw_1+space_2+draw_2+space_2+draw_1)    
+                    print(self.space_num*" "+space_1+draw_1+space_2+draw_2+space_2+draw_1)    
                 else:
-                    print(space_1+draw_1+space_2+draw_1+space_3+draw_1+space_2+draw_1)
+                    print(self.space_num*" "+space_1+draw_1+space_2+draw_1+space_3+draw_1+space_2+draw_1)
             elif i==height-1:
-                print(space_1+draw_1+space_2+draw_1)
-x=graph(15,0)
-x.draw_star()
+                print(self.space_num*" "+space_1+draw_1+space_2+draw_1)
