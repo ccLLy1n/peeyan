@@ -20,16 +20,16 @@ while True:
         try:
             int(ans)
         except:
-            print("輸入錯誤")
+            print("輸入錯誤\n")
             continue
         if int(ans)<=0:
-            print("輸入錯誤")
+            print("輸入錯誤\n")
             continue
 
         t.append(int(ans))
         shape_sequence.append(shape)
         shape_wide.append(2*int(ans)+1) #三角形對應的最長寬度為：三角形高度*2+1
-        print("這個三角形編號是t"+str(shape_sequence.count('t')))  #此處的.count()涵式是用來計算現有的三角形數量
+        print("這個三角形編號是t"+str(shape_sequence.count('t'))+'\n')  #此處的.count()涵式是用來計算現有的三角形數量
     
     elif shape=='r':
         r_length = list()
@@ -37,10 +37,10 @@ while True:
         try:
             int(ans)
         except:
-            print("輸入錯誤")
+            print("輸入錯誤\n")
             continue
         if int(ans)<=0:
-            print("輸入錯誤")
+            print("輸入錯誤\n")
             continue
         r_length.append(int(ans))
 
@@ -48,55 +48,58 @@ while True:
         try:
             int(ans)
         except:
-            print("輸入錯誤")
+            print("輸入錯誤\n")
             continue
         if int(ans)<=0:
-            print("輸入錯誤")
+            print("輸入錯誤\n")
             continue
         r_length.append(int(ans))
         r.append(r_length)
         shape_sequence.append(shape)
         shape_wide.append(int(ans))  #矩形對應的最長寬度為：X軸邊長
-        print("這個矩形編號是r"+str(shape_sequence.count('r')))#此處的.count()涵式是用來計算現有的矩形數量
+        print("這個矩形編號是r"+str(shape_sequence.count('r'))+'\n')#此處的.count()涵式是用來計算現有的矩形數量
         
     elif shape=='s':
         ans=input("請輸入星形邊長：")
         try:
             int(ans)
         except:
-            print("輸入錯誤")
+            print("輸入錯誤\n")
             continue
         if int(ans)<=0:
-            print("輸入錯誤")
+            print("輸入錯誤\n")
             continue
         s.append(int(ans))
         shape_sequence.append(shape)
         shape_wide.append(3*int(ans)-1)  #星星對應的最長為：星星寬度邊*3-1
-        print("這個星形編號是s"+str(shape_sequence.count('s')))
+        print("這個星形編號是s"+str(shape_sequence.count('s'))+'\n')
     elif shape=='c':
-        ans=input("請輸入圓形直徑：")
+        ans=input("請輸入圓形直徑（需為奇數，且大於等於９）：")
         try:
             int(ans)
         except:
-            print("輸入錯誤")
+            print("輸入錯誤\n")
             continue
         if int(ans)<=0:
-            print("輸入錯誤")
+            print("輸入錯誤\n")
+            continue
+        elif int(ans)%2 ==0 or int(ans)<9 :
+            print('輸入的圓形直徑不符合規範\n')
             continue
         c.append(int(ans))
         shape_sequence.append(shape)
         shape_wide.append(int(ans)) #圓形對應的最長為：圓形寬度為直徑
-        print("這個圓形編號是c"+str(shape_sequence.count('c')))
+        print("這個圓形編號是c"+str(shape_sequence.count('c'))+'\n')
     elif shape=='h':
         ans=input("請輸入梯形高：") #integrate 整合變數時發現弊病，變更輸入順序
         h_length=[]
         try:
             int(ans)
         except:
-            print("輸入錯誤")
+            print("輸入錯誤\n")
             continue
         if int(ans)<=0:
-            print("輸入錯誤")
+            print("輸入錯誤\n")
             continue
         h_length.append(int(ans))
 
@@ -104,21 +107,21 @@ while True:
         try:
             int(ans)
         except:
-            print("輸入錯誤")
+            print("輸入錯誤\n")
             continue
         if int(ans)<=0:
-            print("輸入錯誤")
+            print("輸入錯誤\n")
             continue
         h_length.append(int(ans))
         h.append(h_length)
         shape_sequence.append(shape)
         shape_wide.append(h_length[1]+2*(h_length[0]-1)) #梯形對應的最常寬度為：上邊+2*(高度-1)
-        print("這個梯形編號是h"+str(shape_sequence.count('h')))
+        print("這個梯形編號是h"+str(shape_sequence.count('h'))+'\n')
     elif shape=='exit':
         print("進入下一階段")
         break
     else:
-        print("輸入錯誤，請重新輸入")
+        print("輸入錯誤，請重新輸入\n")
 #進入畫圖階段
 print("\nDraw_graphic")
 print("------------------")
